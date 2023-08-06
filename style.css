@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Philosopher&family=Red+Hat+Text:wght@300;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: system-ui;
+  background-color: #152234ec;
+}
+
+.container {
+  padding: 3em 1.5em;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.316);
+  background-color: #151222;
+  width: 90%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn {
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  height: 35px;
+  width: 50px;
+  background-color: #53cde2;
+  color: #06283d;
+  font-weight: 400;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.btn:disabled {
+  background-color: #164149;
+  color: #edf9fc96;
+}
+
+.btn:not(.wrong, .right):hover {
+  filter: brightness(150%);
+}
+
+.btn:not(.wrong, .right):active {
+  transform: scale(0.83);
+}
+
+.btn.right {
+  background-color: #00dfa2;
+  color: #151222;
+}
+
+.btn.wrong {
+  background-color: #ff0060;
+  color: #edf9fc;
+}
+
+.word-keyboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  font-size: 1.3rem;
+}
+
+.word {
+  font-family: "Red Hat Text", sans-serif;
+  font-size: 2rem;
+  color: #a4ebf3;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+p {
+  color: rgba(221, 230, 237, 0.953);
+  font-weight: bold;
+}
+
+p span {
+  color: #ff0060;
+}
+
+/* Hangman */
+
+.head,
+.body,
+.right-hand,
+.left-hand,
+.right-leg,
+.left-leg {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.head.show,
+.body.show,
+.right-hand.show,
+.left-hand.show,
+.right-leg.show,
+.left-leg.show {
+  opacity: 1;
+}
+
+@media (min-width: 992px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 5em;
+  }
+  svg {
+    display: block;
+    justify-self: center;
+    transform: scale(1.2);
+  }
+}
+
+img {
+  width: 100px;
+  display: none;
+}
+
+img.show {
+  display: block;
+}
+
+.restart {
+  background-color: #ffffff50;
+  padding: 2em;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+.restart.show {
+  visibility: visible;
+  opacity: 1;
+}
+.restart::after {
+  content: "";
+  border-radius: 10px;
+  background-color: #fff;
+  width: 85%;
+  height: 350px;
+  position: absolute;
+  z-index: -2;
+  box-shadow: 0 0 10px #152234ec;
+}
+
+.restart p {
+  color: rgb(85, 100, 112);
+  text-align: center;
+}
+
+.correct-word {
+  font-size: 1.3rem !important;
+}
+
+.game-over {
+  font-size: 2rem;
+  color: rgb(0, 136, 255);
+}
+
+.play-again {
+  font-family: "Philosopher", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+  width: max-content;
+  padding: 1em 2em;
+  line-height: 1px;
+  font-size: 1.4rem;
+  background-color: #132748e5;
+  color: #edf9fc;
+  font-family: system-ui;
+  letter-spacing: 1px;
+}
+.play-again:hover {
+  filter: brightness(150%);
+}
+
+#hint-text {
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  color: #ff0060;
+}
+#hint-text span {
+  color: #00dfa2;
+}

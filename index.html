@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <svg width="250px" height="250px" viewBox="0 0 100 100">
+        <g>
+          <line
+            class="bottom-line"
+            x1="50"
+            y1="90"
+            x2="90"
+            y2="90"
+            stroke="#fff"
+          ></line>
+          <line
+            class="straing-line"
+            x1="70"
+            y1="10"
+            x2="70"
+            y2="90"
+            stroke="#fff"
+          ></line>
+          <line
+            class="top-join-line"
+            x1="55"
+            y1="10"
+            x2="70"
+            y2="25"
+            stroke="#fff"
+          ></line>
+          <line
+            class="top-horizontal-line"
+            x1="30"
+            y1="10"
+            x2="70"
+            y2="10"
+            stroke="#fff"
+          ></line>
+          <line
+            class="rope"
+            x1="30"
+            y1="10"
+            x2="30"
+            y2="20"
+            stroke="#fff"
+            stroke-width=".7"
+          ></line>
+          <ellipse
+            cx="30"
+            cy="27"
+            ry="7"
+            rx="7"
+            fill="none"
+            stroke="#fff"
+            class="head"
+          ></ellipse>
+          <line
+            class="body"
+            x1="30"
+            y1="34"
+            x2="30"
+            y2="60"
+            stroke="#fff"
+          ></line>
+          <path
+            class="right-hand"
+            d="M30,37 C40,40 40,50 38,52"
+            fill="none"
+            stroke="#fff"
+          ></path>
+          <path
+            class="left-hand"
+            d="M30,37 C20,40 23,50 23,49"
+            fill="none"
+            stroke="#fff"
+          ></path>
+          <path
+            class="left-leg"
+            d="M30,60 C20,63 23,75 23,73"
+            fill="none"
+            stroke="#fff"
+          ></path>
+          <path
+            class="right-leg"
+            d="M30,60 C37,63 37,75 38,73"
+            fill="none"
+            stroke="#fff"
+          ></path>
+        </g>
+      </svg>
+      <div class="word-keyboard">
+        <div class="word" id="word">H _ n g _ _ n</div>
+        <p class="word" id="hint-text">Hint: <span>Guess Animal</span></p>
+        <p>Incorrect Guess: <span id="incorrect">0 / 6</span></p>
+        <div class="keyboard">
+          <button class="btn">a</button>
+          <button class="btn">b</button>
+          <button class="btn">c</button>
+          <button class="btn">d</button>
+          <button class="btn">e</button>
+          <button class="btn">f</button>
+          <button class="btn">g</button>
+          <button class="btn">h</button>
+          <button class="btn">i</button>
+          <button class="btn">j</button>
+          <button class="btn">k</button>
+          <button class="btn">l</button>
+          <button class="btn">m</button>
+          <button class="btn">n</button>
+          <button class="btn">o</button>
+          <button class="btn">p</button>
+          <button class="btn">q</button>
+          <button class="btn">r</button>
+          <button class="btn">s</button>
+          <button class="btn">t</button>
+          <button class="btn">u</button>
+          <button class="btn">v</button>
+          <button class="btn">w</button>
+          <button class="btn">x</button>
+          <button class="btn">y</button>
+          <button class="btn">z</button>
+        </div>
+      </div>
+      <div class="restart">
+        <img src="./images/sad.png" class="sad" alt="Game over!" />
+        <img
+          src="./images/congrat.png"
+          class="congratulation"
+          alt="Congratulation"
+        />
+        <p class="game-over">Game Over!</p>
+        <p class="correct-word">You found the word <span>Hangman</span></p>
+        <button class="play-again" id="play-again">Play Again</button>
+      </div>
+    </div>
+  </body>
+</html>
