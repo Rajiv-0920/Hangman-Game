@@ -130,6 +130,9 @@ p span {
     justify-self: center;
     transform: scale(1.2);
   }
+  .restart::after {
+    width: 500px !important;
+  }
 }
 
 img {
